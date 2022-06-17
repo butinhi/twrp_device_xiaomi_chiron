@@ -21,7 +21,7 @@
  # 高级安全（提供rec设置密码等） 
  export FOX_ADVANCED_SECURITY="1"
  # 版本号 
- export FOX_VERSION="R11.2_20220608"
+ export FOX_VERSION="R11.2_20220615"
  # 编译类型
  export FOX_BUILD_TYPE="Unofficial"
  # 编译ofrp必须开启
@@ -30,7 +30,7 @@
  # Nano编辑器
  export FOX_USE_NANO_EDITOR=1
  # 编译者信息 
- export OF_MAINTAINER="QKIvan"
+ export OF_MAINTAINER="QKIvan and GTCxprice"
  # 可以自定义状态栏钟
  export OF_CLOCK_POS=1
  # 没有MIUI系统没有特殊手势
