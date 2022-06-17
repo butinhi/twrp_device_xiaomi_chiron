@@ -42,6 +42,7 @@ lunch twrp_chiron-eng && mka recoveryimage
 
 Special thanks to the following people or repo:
 
+- [GTCxprice)](https://github.com/GTCxprice)
 - [Nanhumly](https://github.com/Nanhumly)
 - [Rom-Builder](https://github.com/Rom-Builder)
 - [0ranko0P](https://github.com/0ranko0P)
