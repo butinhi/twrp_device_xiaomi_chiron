@@ -8,17 +8,9 @@ It was announced in October 2017. Release date was December 2017.
 
 Forked From:https://github.com/0ranko0P/twrp_device_xiaomi_sagit
 
-## To compile
+## Note
 
-source build/envsetup.sh
-
-export ALLOW_MISSING_DEPENDENCIES=true
-
-export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1
-
-export LC_ALL="C"
-
-lunch twrp_chiron-eng && mka recoveryimage
+Decryption works on Android 12.x ROMs
 
 ## Device specifications
 
@@ -38,13 +30,44 @@ lunch twrp_chiron-eng && mka recoveryimage
 
 ![Xiaomi Mi MIX 2](https://i8.mifile.cn/a1/pms_1505401464.03824312!560x560.jpg "Xiaomi Mi MIX 2 in black")
 
+## Kernel Source
+
+https://github.com/Nanhumly/android_kernel_xiaomi_msm8998/tree/lineage-19.1
+
+## Compile
+
+First repo init the TWRP 12.1 tree:
+
+```shell
+repo init -u git://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-12.1
+```
+
+Sync source:
+
+```shell
+repo sync
+```
+
+In order to successfully build in this branch, the following patch(es) will need to be cherry-picked:
+
+- [fscrypt: wip](https://gerrit.twrp.me/c/android_bootable_recovery/+/5405)
+- [fscrypt: move functionality to libvold](https://gerrit.twrp.me/c/android_system_vold/+/5540)
+- [mtp: Allow transfer of files larger than 4G](https://gerrit.twrp.me/c/android_bootable_recovery/+/5689)
+
+Finally execute these:
+
+```
+.build/envsetup.sh
+lunch twrp_chiron-eng
+mka recoveryimage
+```
+
 ## Credits
 
 Special thanks to the following people or repo:
 
+- [0ranko0P](https://github.com/0ranko0P)
 - [GTCxprice](https://github.com/GTCxprice)
 - [Nanhumly](https://github.com/Nanhumly)
 - [Rom-Builder](https://github.com/Rom-Builder)
-- [0ranko0P](https://github.com/0ranko0P)
 - [foxlesbiao](https://github.com/foxlesbiao)
-- [twrp_device_xiaomi_sagit](https://github.com/0ranko0P/twrp_device_xiaomi_sagit)
